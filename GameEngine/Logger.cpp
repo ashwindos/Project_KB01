@@ -27,8 +27,5 @@ void Logger::Log(string text)
 	outfile.open("log.txt", ios_base::app);
 	std::time_t t =  std::time(NULL);
     std::tm tm    = *std::localtime(&t);
-	
-  //  outfile << "Time right now is " << std::put_time(&tm, "%c %Z") << '\n';
-	outfile << std::put_time(&tm, "%c" " "  ) << text << '\n';
-	//outfile << std::put_time(&tm, "%c" ) << '\n';
+	outfile << '[' << put_time(&tm, "%c") << "] " << text << endl;
 }
