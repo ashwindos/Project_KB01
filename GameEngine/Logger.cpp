@@ -2,6 +2,9 @@
 #include "Logger.h"
 #include <string>
 #include <fstream>
+#include <iostream>
+#include <iomanip>
+#include <ctime>
 
 using namespace std;
 
@@ -22,6 +25,10 @@ void Logger::Log(string text)
 {
 	ofstream outfile;
 	outfile.open("log.txt", ios_base::app);
-	outfile << "\n";
-	outfile << text;
+	std::time_t t =  std::time(NULL);
+    std::tm tm    = *std::localtime(&t);
+	
+  //  outfile << "Time right now is " << std::put_time(&tm, "%c %Z") << '\n';
+	outfile << std::put_time(&tm, "%c" " "  ) << text << '\n';
+	//outfile << std::put_time(&tm, "%c" ) << '\n';
 }
