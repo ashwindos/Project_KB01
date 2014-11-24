@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include "Logger.h"
 #include <string>
 #include <fstream>
@@ -21,11 +20,11 @@ Logger::~Logger(void)
 /// Appends a string to log.txt
 /// </summary>
 /// <param name="text">The text to log.</param>
-void Logger::Log(string text)
+void Logger::Log(string _text)
 {
 	ofstream outfile;
 	outfile.open("log.txt", ios_base::app);
-	std::time_t t =  std::time(NULL);
-    std::tm tm    = *std::localtime(&t);
-	outfile << '[' << put_time(&tm, "%c") << "] " << text << endl;
+	std::time_t t = std::time(NULL);
+    std::tm tm = *std::localtime(&t);
+	outfile << '[' << put_time(&tm, "%c") << "] " << _text << endl;
 }

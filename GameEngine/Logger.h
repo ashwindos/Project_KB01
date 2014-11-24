@@ -8,4 +8,3 @@ public:
 	~Logger(void);
 	void Log(std::string);
 };
-
