@@ -5,8 +5,6 @@
 #include <iomanip>
 #include <ctime>
 
-using namespace std;
-
 Logger::Logger(void)
 {
 }
@@ -16,15 +14,33 @@ Logger::~Logger(void)
 {
 }
 
-/// <summary>
-/// Appends a string to log.txt
-/// </summary>
-/// <param name="text">The text to log.</param>
-void Logger::Log(string _text)
+
+void Logger::Log(std::string _text)
 {
-	ofstream outfile;
-	outfile.open("log.txt", ios_base::app);
+	std::ofstream outfile;
+	outfile.open("log.txt", std::ios_base::app);
+	// Write the time before each log
 	std::time_t t = std::time(NULL);
     std::tm tm = *std::localtime(&t);
-	outfile << '[' << put_time(&tm, "%c") << "] " << _text << endl;
+	outfile << '[' << std::put_time(&tm, "%c") << "] " << _text << std::endl;
+}
+
+void Logger::Log(int _text)
+{
+	std::ofstream outfile;
+	outfile.open("log.txt", std::ios_base::app);
+	// Write the time before each log
+	std::time_t t = std::time(NULL);
+    std::tm tm = *std::localtime(&t);
+	outfile << '[' << std::put_time(&tm, "%c") << "] " << _text << std::endl;
+}
+
+void Logger::Log(float _text)
+{
+	std::ofstream outfile;
+	outfile.open("log.txt", std::ios_base::app);
+	// Write the time before each log
+	std::time_t t = std::time(NULL);
+    std::tm tm = *std::localtime(&t);
+	outfile << '[' << std::put_time(&tm, "%c") << "] " << _text << std::endl;
 }

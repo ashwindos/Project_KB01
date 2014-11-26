@@ -5,7 +5,11 @@
 int main()
 {
 	Logger* l = new Logger();
-	l->Log("invoer");
+	std::string c = "sdfsdf";
+	float a = 1.33;
+	int b = 2;
+	l->Log(a);
+	l->Log(b);
+	l->Log(c);
 	return 0;
 }
-
