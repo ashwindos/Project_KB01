@@ -1,15 +1,16 @@
 // GameEngine.cpp : Defines the entry point for the console application.
 //
 #include "Logger.h"
+#include "Window.h"
+#include <Windows.h>
+#include "D3dtest.h"
 
-int main()
+int WINAPI WinMain( HINSTANCE hInstance,  
+                    HINSTANCE hPrevInstance,
+                    LPSTR szCmdLine,      
+                    int iCmdShow)    
 {
-	Logger* l = new Logger();
-	std::string c = "sdfsdf";
-	float a = 1.33;
-	int b = 2;
-	l->Log(a);
-	l->Log(b);
-	l->Log(c);
+	
+	Window* w = new Window(hInstance, iCmdShow);
 	return 0;
 }
