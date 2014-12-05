@@ -27,9 +27,12 @@
     <ClInclude Include="Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="D3dtest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+>>>>>>> 813927fb466a1aea4158f16ac6c20a962682caf3
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameEngine.cpp">
@@ -41,8 +44,11 @@
     <ClCompile Include="Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="D3dtest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+=======
+>>>>>>> 813927fb466a1aea4158f16ac6c20a962682caf3
   </ItemGroup>
 </Project>
